@@ -5,6 +5,7 @@ def nasobeni(a, b):
 
 def vyhodnoceni(vysledek, odpoved):
     return vysledek == odpoved
+body = 0
 
 while True:
     x, y = random.randint(1, 10), random.randint(1, 10)
@@ -14,6 +15,7 @@ while True:
         porovnani = int(input(f"{x} * {y} = "))
         if vyhodnoceni(vysledek, porovnani):
             print("Správně!")
+            body += 1
         else:
             print("Nesprávně, zkus to znovu.")
     except ValueError:
@@ -23,5 +25,5 @@ while True:
     if pokracovat.lower() != "ano":
         break
 
-print("Hotovo!")
+print(f"Získal jsi {body} bodů. Hotovo!")
 
